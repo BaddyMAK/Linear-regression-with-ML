@@ -51,7 +51,7 @@ The previous method (MSE) requires the matrix to be inverted, which may be too c
 
 4- Increase i by 1 and go back to step 2, until a stopping rule is satisfied 
 
-•	An example of stopping rule is ||ŵ(i+1)-ŵ(i)||<∊, in this lab ∊ =10-8
+•	An example of stopping rule is ||ŵ(i+1)-ŵ(i)||<∊, in this lab ∊ =10 &#x00B-8
 
 •	In this lab γ was chosen 0.0001:
 
