@@ -62,7 +62,7 @@ This method converges to the MSE solution if γ was chosen correctly.
 
 
 
-
+R<sup>-1</sup>
 
 
 
