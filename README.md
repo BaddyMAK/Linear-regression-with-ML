@@ -1,4 +1,4 @@
-# Linear regression of the UPDR score for the Parkinson’s patients using : 
+# Linear regression of the UPDR score for the Parkinson’s patients using: 
 ## MSE, Gradient Descent (GD) and Steepest Descent (SD)
 ## 1- Parkinson disease: 
 Parkinson's disease affects the muscles of patients so they become unable to control them and they start suffering difficulties during walking or starting any kind of movement. Major part of those patients cannot speak correctly because they cannot control the vocal chords. 
@@ -14,20 +14,20 @@ Moreover, this set of data must be prepared before using it:
 
 - Consider only data related to the first 36 patients as training set (store them in the matrix data_train) and leave patients from 37 to 42 for the testing phase (store them in the data_test).
 
-3- Normalize the two matrices: data_train and data_test and call them data_train_norm and 
+- Normalize the two matrices: data_train and data_test and call them data_train_norm and 
 data_test_norm: 
 
 -	For the data_train: after normalization, each feature (each column) had zero mean and variance equal to 1: the normalization consists on evaluating the mean and the variance of each column. Each mean value (m) was subtracted from the corresponding column for the 36 patients then the result was divided by the standard deviation (s).
 
 -	For the data_test the normalization was performed by the measured mean and the measured standard deviation of the training data.
 
-4- Define F0 as the target feature that we will estimate from the other features, y_train is the column vector that contains this Target feature. Knowing that both jitter% (column 6) and UPDRS (column 5) have been analyzed by the regression process but in this report, only UPDRS results were presented.
+- Define F0 as the target feature that we will estimate from the other features, y_train is the column vector that contains this Target feature. Knowing that both jitter% (column 6) and UPDRS (column 5) have been analyzed by the regression process but in this report, only UPDRS results were presented.
 
-5- y_train= data_train_norm[:,F0] and the matrix X_train is the data_train_norm without the column F0. The same thing for the test set.
+- y_train= data_train_norm[:,F0] and the matrix X_train is the data_train_norm without the column F0. The same thing for the test set.
 
 Although, performing a regression technique to predict UPDRS is not too much efficient since not only Parkinson’s disease affect voice parameters.
 
-3- MSE (Minimum square Error): 
+## 3- MSE (Minimum square Error): 
 This method consists on minimizing the square error between the original vector and the predicted one:
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq.PNG)
@@ -36,20 +36,20 @@ Where e (w) is a scalar and y is the original column vector with N elements, X i
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq%202.PNG)
 
-4- Gradient Descent :
+## 4- Gradient Descent :
 The previous method (MSE) requires the matrix to be inverted, which may be too complex in some cases (like image processing) then it is preferred to use the following method, which is an iterative solution: 
 
-1- Start with an initial guess of ŵ (0), which is a random vector of 21 random variables. 
+- Start with an initial guess of ŵ (0), which is a random vector of 21 random variables. 
 
-2- Evaluate the gradient:
+- Evaluate the gradient:
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq3.PNG)
 
-3- Update the guess:  
+- Update the guess:  
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq4.PNG)
 
-4- Increase i by 1 and go back to step 2, until a stopping rule is satisfied 
+- Increase i by 1 and go back to step 2, until a stopping rule is satisfied 
 
 •	An example of stopping rule is ||ŵ(i+1)-ŵ(i)||<∊, in this lab ∊ =10<sup>-8</sup>
 
@@ -65,17 +65,17 @@ Same as before this algorithm is also an iterative one, which allows to get a fa
 
 The algorithm has the following steps:
 
-1. Start from an initial guess ŵ (0)
+- Start from an initial guess ŵ (0)
 
-2. Evaluate the gradient and the Hessian matrix at point ŵ (i)
+- Evaluate the gradient and the Hessian matrix at point ŵ (i)
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq5.PNG)
 
-3. Find the new point as:
+- Find the new point as:
 
 ![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq6.PNG)
 
-4. Set i: = i + 1, go back to step 2, unless a stop condition is met.
+- Set i: = i + 1, go back to step 2, unless a stop condition is met.
 
 
 
