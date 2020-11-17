@@ -51,7 +51,7 @@ The previous method (MSE) requires the matrix to be inverted, which may be too c
 
 4- Increase i by 1 and go back to step 2, until a stopping rule is satisfied 
 
-•	An example of stopping rule is ||ŵ(i+1)-ŵ(i)||<∊, in this lab ∊ =10 ^-8
+•	An example of stopping rule is ||ŵ(i+1)-ŵ(i)||<∊, in this lab ∊ =10<sup>-8</sup>
 
 •	In this lab γ was chosen 0.0001:
 
@@ -60,9 +60,25 @@ The previous method (MSE) requires the matrix to be inverted, which may be too c
   
 This method converges to the MSE solution if γ was chosen correctly.
 
+## 5- Steepest Descent:
+Same as before this algorithm is also an iterative one, which allows to get a faster convergence with respect to the previous one. It consists on finding the “optimum” value of γ at each step. Besides, in this approach need to start with a random vector ŵ (0) as before.
+
+The algorithm has the following steps:
+
+1. Start from an initial guess ŵ (0)
+
+2. Evaluate the gradient and the Hessian matrix at point ŵ (i)
+
+![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq5.PNG)
+
+3. Find the new point as:
+
+![alt text](https://github.com/BaddyMAK/Linear-regression-with-ML/blob/main/results/eq6.PNG)
+
+4. Set i: = i + 1, go back to step 2, unless a stop condition is met.
 
 
-R<sup>-1</sup>
+
 
 
 
